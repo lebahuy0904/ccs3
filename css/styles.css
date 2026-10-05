@@ -1,0 +1,70 @@
+/* --- Tiêu chí 3: Skip Link ("Chuyển đến Nội dung chính") --- */
+.skip-link {
+  position: absolute;
+  top: -100px; /* An khỏi màn hình */
+  left: 10px;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 10px; /* Hiển thị khi được focus bằng phím Tab */
+}
+
+/* --- Tiêu chí 4: Điều hướng sử dụng ít nhất 3 thuộc tính CSS --- */
+nav {
+  /* Tiêu chí 7: Áp dụng flexbox cho thanh điều hướng */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  /* 3 thuộc tính CSS tạo kiểu hấp dẫn cho nav */
+  background-color: #2c3e50;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- Tiêu chí 5: Mô hình hộp cho hình ảnh (border, padding, border-radius) --- */
+img {
+  border: 3px solid #34495e; /* Đường viền */
+  padding: 8px;              /* Đệm */
+  border-radius: 12px;       /* Bán kính viền */
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+/* --- Tiêu chí 6: Áp dụng CSS Grid (ít nhất 2 cột) cho trang Gallery --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* --- Tiêu chí 8: Lớp giả hover hiệu ứng biến đổi thú vị --- */
+.gallery-item img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.08) rotate(1deg); /* Phóng to và xoay nhẹ */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Tiêu chí 9: Bộ chọn :nth-child --- */
+/* Đổi bán kính viền (border-radius) khác nhau cho các hình ảnh ở vị trí chẵn */
+.grid-container .gallery-item:nth-child(even) img {
+  border-radius: 50px 0px 50px 0px;
+  border-color: #e74c3c;
+}
